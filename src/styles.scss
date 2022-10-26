@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body, html {
+    font-size: 14px;
+    background-color: #1d1d1d;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply rounded-md px-4 py-2 bg-primary text-white font-bold cursor-pointer
+  }
+
+  .btn:hover {
+    @apply bg-primary-lighter transition-all duration-300
+  }
+}

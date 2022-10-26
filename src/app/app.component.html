@@ -1,1 +1,5 @@
 <button class="btn" (click)="onButtonClick()">test</button>
+
+<div class="mt-5">
+  <app-todo-item *ngFor="let item of todosService.getTodos()" [data]="item"></app-todo-item>
+</div>

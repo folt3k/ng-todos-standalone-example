@@ -4,18 +4,20 @@
 @tailwind utilities;
 
 @layer base {
-  body, html {
+  body,
+  html {
     font-size: 14px;
     background-color: #1d1d1d;
+    @apply text-white;
   }
 }
 
 @layer components {
   .btn {
-    @apply rounded-md px-4 py-2 bg-primary text-white font-bold cursor-pointer
+    @apply rounded-md px-4 py-2 bg-primary text-white font-bold cursor-pointer;
   }
 
   .btn:hover {
-    @apply bg-primary-lighter transition-all duration-300
+    @apply bg-primary-lighter transition-all duration-300;
   }
 }

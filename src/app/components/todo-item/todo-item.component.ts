@@ -14,8 +14,4 @@ export class TodoItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  ngDoCheck() {
-    console.log("change detection..");
-  }
 }

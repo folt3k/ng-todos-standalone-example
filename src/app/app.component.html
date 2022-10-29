@@ -1,5 +1,9 @@
 <button class="btn" (click)="onButtonClick()">test</button>
 
 <div class="mt-5">
-  <app-todo-item *ngFor="let item of todosService.getTodos()" [data]="item"></app-todo-item>
-</div>
+  <div class="flex justify-center items-center">
+    <div class="w-1/2 space-y-2">
+      <app-todo-item class="block" *ngFor="let item of todosService.getTodos()" [data]="item">
+      </app-todo-item>
+    </div>
+  </div>

@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
+import { TodoItem } from "../../types";
+
 @Component({
   selector: "app-todo-item",
   standalone: true,
@@ -9,7 +11,7 @@ import { CommonModule } from "@angular/common";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoItemComponent implements OnInit {
-  @Input() data!: string;
+  @Input() data!: TodoItem;
 
   constructor() {}
 

@@ -3,6 +3,7 @@ import { Component, inject } from "@angular/core";
 import { TodosService } from "./services/todos.service";
 import { CommonModule } from "@angular/common";
 import { TodoItemComponent } from "./components/todo-item/todo-item.component";
+import { addTodo, todos$ } from "./store/store";
 
 @Component({
   selector: "app-root",
@@ -13,8 +14,9 @@ import { TodoItemComponent } from "./components/todo-item/todo-item.component";
 })
 export class AppComponent {
   todosService = inject(TodosService);
+  todos$ = todos$;
 
   onButtonClick(): void {
-    // console.log(this.todosService.getTodos());
+    addTodo({ content: "nowy" });
   }
 }

@@ -1,3 +1,5 @@
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { importProvidersFrom } from "@angular/core";
 import { enableProdMode } from "@angular/core";
 import { bootstrapApplication } from "@angular/platform-browser";
 import { devTools } from "@ngneat/elf-devtools";
@@ -11,6 +13,8 @@ if (environment.production) {
   enableProdMode();
 }
 
-bootstrapApplication(AppComponent).catch((err) => {
+bootstrapApplication(AppComponent, {
+  providers: [importProvidersFrom(BrowserAnimationsModule)],
+}).catch((err) => {
   console.log(err);
 });

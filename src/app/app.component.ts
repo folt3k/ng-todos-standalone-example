@@ -1,7 +1,8 @@
 import { Component, inject } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { MatButtonModule } from "@angular/material/button";
 
 import { TodosService } from "./services/todos.service";
-import { CommonModule } from "@angular/common";
 import { TodoItemComponent } from "./components/todo-item/todo-item.component";
 import { addTodo, todos$ } from "./store/store";
 
@@ -10,7 +11,7 @@ import { addTodo, todos$ } from "./store/store";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
   standalone: true,
-  imports: [CommonModule, TodoItemComponent],
+  imports: [CommonModule, TodoItemComponent, MatButtonModule],
 })
 export class AppComponent {
   todosService = inject(TodosService);

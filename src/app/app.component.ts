@@ -22,7 +22,7 @@ export class AppComponent {
 
   loadTodos(): void {
     this.todosService.getTodos().subscribe((data) => {
-      console.log(data);
+      console.log(data.length);
     });
   }
 }

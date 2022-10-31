@@ -6,7 +6,8 @@ import { devTools } from "@ngneat/elf-devtools";
 
 import { environment } from "./environments/environment";
 import { AppComponent } from "./app/app.component";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { CacheInterceptor } from "./app/_shared/cache.interceptor";
 
 devTools();
 
@@ -15,7 +16,15 @@ if (environment.production) {
 }
 
 bootstrapApplication(AppComponent, {
-  providers: [importProvidersFrom(BrowserAnimationsModule), importProvidersFrom(HttpClientModule)],
+  providers: [
+    importProvidersFrom(BrowserAnimationsModule),
+    importProvidersFrom(HttpClientModule),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CacheInterceptor,
+      multi: true,
+    },
+  ],
 }).catch((err) => {
   console.log(err);
 });

@@ -6,6 +6,7 @@ import { devTools } from "@ngneat/elf-devtools";
 
 import { environment } from "./environments/environment";
 import { AppComponent } from "./app/app.component";
+import { HttpClientModule } from "@angular/common/http";
 
 devTools();
 
@@ -14,7 +15,7 @@ if (environment.production) {
 }
 
 bootstrapApplication(AppComponent, {
-  providers: [importProvidersFrom(BrowserAnimationsModule)],
+  providers: [importProvidersFrom(BrowserAnimationsModule), importProvidersFrom(HttpClientModule)],
 }).catch((err) => {
   console.log(err);
 });

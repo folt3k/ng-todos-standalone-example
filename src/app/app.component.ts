@@ -1,5 +1,4 @@
 import { Component, inject } from "@angular/core";
-import { CommonModule } from "@angular/common";
 
 import { TodosService } from "./services/todos.service";
 import { TodoItemComponent } from "./components/todo-item/todo-item.component";
@@ -19,5 +18,11 @@ export class AppComponent {
 
   onButtonClick(): void {
     addTodo({ content: "nowy" });
+  }
+
+  loadTodos(): void {
+    this.todosService.getTodos().subscribe((data) => {
+      console.log(data);
+    });
   }
 }
